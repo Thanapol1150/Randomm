@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+        }
+        body{
+            height: 50rem;
+            text-align: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: cornsilk;
+            
+        }
+        button{
+            font-size: 20px;
+            height: 50px;
+            width: 300px;
+            border-radius: 10px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<p><h1>ลูกเต๋าเสี่ยงทาย</h1></p>
+<div class="imgR">
+<img id="image1" src="./img/0.png" alt="Image 1">
+<img id="image2" src="./img/0.png" alt="Image 2">
+<img id="image3" src="./img/0.png" alt="Image 3">
+</div>
+
+<button id="Button">กดเพื่อสุ่ม</button>
+
+<script>
+const images = [
+  "./img/1.JPG",
+  "./img/2.JPG",
+  "./img/3.JPG",
+  "./img/4.JPG",
+  "./img/5.JPG",
+  "./img/6.JPG",
+];
+
+
+document.getElementById("Button").addEventListener("click", function() {
+  document.getElementById("image1").src = getRandomImage(images);
+  document.getElementById("image2").src = getRandomImage(images);
+  document.getElementById("image3").src = getRandomImage(images);
+});
+
+function getRandomImage(imageList) {
+  var randomIndex = Math.floor(Math.random() * imageList.length);
+  return imageList[randomIndex];
+}
+</script>
+
+</body>
+</html>
